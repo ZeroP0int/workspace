@@ -1,0 +1,32 @@
+.calendar-container{
+	width: 500px;
+	background: #008c8c;
+	border-radius: 5px;
+	padding: 1em;
+	color: #fff;
+}
+.calendar-select{
+	text-align: center;
+}
+.calendar-week{
+	margin: 1em 0;
+}
+.calendar-week,
+.calendar-content{
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	place-items: center;
+	grid-row-gap: 10px;
+}
+.calendar-content span{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+.calendar-content span.active{
+	background: #fff;
+	color: #008c8c;
+	border-radius: 50%;
+}

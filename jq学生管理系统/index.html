@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>原生js学生管理系统</title>
+	<link rel="stylesheet" type="text/css" href="./index.css">
+	<link rel="icon" type="text/css" href="./img/logo.ico">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<div class="logo">
+				<img src="./img/logo.png">
+				<span>渡一教育</span>
+			</div>
+		</div>
+		<div class="left-menu">
+			<dl id="menu-list">
+				<dt>学生管理</dt>
+				<!-- dd[data-id = student-list] -->
+				<dd data-id="student-list">学生列表</dd>
+				<dd data-id="add-student">新增学生</dd>
+			</dl>
+		</div>
+		<div class="right-content">
+			<div class="student-list content" id="student-list">
+				<table>
+					<thead>
+						<tr>
+							<th>学号</th>
+							<th>姓名</th>
+							<th>性别</th>
+							<th>邮箱</th>
+							<th>年龄</th>
+							<th>手机号</th>
+							<th>住址</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody id="table-body">
+						<!-- <tr>
+							<td>17</td>
+							<td>井海涵</td>
+							<td>男</td>
+							<td>974360215@qq.com</td>
+							<td>21</td>
+							<td>18618152804</td>
+							<td>北京</td>
+							<td>
+								<button class="btn edit">编辑</button>
+								<button class="btn del">删除</button>
+							</td>
+						</tr> -->
+					</tbody>
+				</table>
+				<div class="model" id="model">
+					<div class="mask" id="mask"></div>
+					<div class="model-content">
+						<h3>编辑信息</h3>
+						<form id="edit-form">
+							<div>
+								<label for="name">姓名</label>
+								<input type="text" id="name" name="name">
+							</div>
+							<div>
+								<label>性别</label>
+								<input type="radio" name="sex" id="male" value="0" checked>
+								<label for="male" class="label-sex">男</label>
+								<input type="radio" name="sex" id="female" value="1">
+								<label for="female" class="label-sex">女</label>
+							</div>
+							<div>
+								<label for="sNo">学号</label>
+								<input type="text" id="sNo" name="sNo">
+							</div>
+							<div>
+								<label for="email">邮箱</label>
+								<input type="text" id="email" name="email">
+							</div>
+							<div>
+								<label for="birth">出生年</label>
+								<input type="text" id="birth" name="birth">
+							</div>
+							<div>
+								<label for="phone">手机号</label>
+								<input type="text" id="phone" name="phone">
+							</div>
+							<div>
+								<label for="address">住址</label>
+								<input type="text" id="address" name="address">
+							</div>
+							<div>
+								<label></label>
+								<input type="submit" class="btn" id="edit-submit-btn">
+								<input type="reset" class="btn">
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="page-box">
+					<div class="page-list" id="page-list">
+					<ul>
+						<li>1</li>
+						<li>2</li>
+					</ul>
+					</div>
+				</div>
+			</div>
+			<div class="add-student content" id="add-student">
+				<form id="add-student-form">
+					<div>
+						<label for="name">姓名</label>
+						<input type="text" id="name" name="name">
+					</div>
+					<div>
+						<label>性别</label>
+						<input type="radio" name="sex" id="male" value="0" checked>
+						<label for="male" class="label-sex">男</label>
+						<input type="radio" name="sex" id="female" value="1">
+						<label for="female" class="label-sex">女</label>
+					</div>
+					<div>
+						<label for="sNo">学号</label>
+						<input type="text" id="sNo" name="sNo">
+					</div>
+					<div>
+						<label for="email">邮箱</label>
+						<input type="text" id="email" name="email">
+					</div>
+					<div>
+						<label for="birth">出生年</label>
+						<input type="text" id="birth" name="birth">
+					</div>
+					<div>
+						<label for="phone">手机号</label>
+						<input type="text" id="phone" name="phone">
+					</div>
+					<div>
+						<label for="address">住址</label>
+						<input type="text" id="address" name="address">
+					</div>
+					<div>
+						<label></label>
+						<input type="submit" class="btn" id="add-student-btn">
+						<input type="reset" class="btn">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="./jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>原生js自动生成乘法表</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		td{
+			border: 1px solid #ccc;
+			background-color: #000;
+			color: #fff;
+			padding: 5px 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>原生js自动生成乘法表</h1>
+	<input type="text" value="9" id="num">
+	<input type="button" value="生成乘法表" onclick = "result()">
+	<input type="button" value="自动生成" onclick="startResult()">
+	<input type="button" value="停止生成" onclick="clearResult()">
+	<table id="tab">
+		<tbody id="tbody"></tbody>
+	</table>
+	<script type="text/javascript">
+		function result(){
+			var num = document.getElementById("num").value;
+			console.log(num);
+			if (!num) {
+				document.getElementById("num").focus();
+				alert("请输入一个数字...");
+				return;
+			}
+			if (isNaN(num)) {
+				document.getElementById("num").value;
+				alert("请输入一个数字...");
+				return;
+			}
+			var html = "";
+			// 两个变量存放行列
+			for(var i = 1; i <= num; i++){// 外循环 行
+				html += "<tr>"
+				for(var j = 1; j <= i; j++){// 内循环 列
+					html += "<td>" + j + " * " + i + " = " + (i * j) + "</td>";
+				}
+				html += "</tr>"
+				document.getElementById("tbody").innerHTML = html;
+			}
+		}
+		var timer = null;
+		var num = 0;
+		function startResult(){
+			timer = setInterval(function(){
+				num ++;
+				document.getElementById("num").value = num;
+				result();
+			},600);
+		}
+		function clearResult(){
+			clearInterval(timer);
+		}
+	</script>
+</body>
+</html>
